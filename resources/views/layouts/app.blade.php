@@ -17,7 +17,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
 
 
-    
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -41,7 +40,10 @@
     @include('layouts.partials.footer')
 
     @stack('modals')
+    
     @livewireScripts
+
+    
 
 </body>
 

@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('telepon_pelanggan');
             $table->foreignId('paket_id')->constrained('pakets')->onDelete('cascade'); // Relasi ke tabel paket
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');  // Relasi ke tabel user
-            $table->enum('status', ['pending', 'completed', 'canceled'])->default('pending'); // Status pemesanan
+            $table->enum('status', ['pending', 'completed','active', 'canceled'])->default('pending'); // Status pemesanan
+            $table->boolean('is_paid')->default(false);
             $table->decimal('total_harga', 10, 2); // Total harga pesanan
             $table->timestamps();
         });

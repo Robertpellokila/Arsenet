@@ -35,7 +35,8 @@ class GalleryResource extends Resource
                     ->disk('public')
                     ->directory('gallery')
                     ->preserveFilenames()
-                    ->maxSize(10240),
+                    ->maxSize(10240)
+                    ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/gif']),
             ]);
     }
 

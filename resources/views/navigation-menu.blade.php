@@ -14,8 +14,14 @@
                 </x-nav-link>
 
                 <x-nav-link href="{{ route('layanan') }}" :active="request()->routeIs('layanan')">
-                    {{ __('Layanan') }}
+                    {{ __('Pemasangan Baru') }}
                 </x-nav-link>
+
+                @auth
+                <x-nav-link href="{{ route('trouble') }}" :active="request()->routeIs('trouble')">
+                    {{ __('Trouble') }}
+                </x-nav-link>
+                @endauth
 
                 <x-nav-link href="{{ route('kontak') }}" :active="request()->routeIs('kontak')">
                     {{ __('Kontak') }}

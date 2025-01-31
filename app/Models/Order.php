@@ -10,11 +10,11 @@ class Order extends Model
     use HasFactory;
 
     protected $fillable = [
-        'paket_id', 'user_id', 'nama_pelanggan', 'email_pelanggan', 'telepon_pelanggan', 'status', 'total_harga'];
+        'paket_id', 'user_id', 'nama_pelanggan', 'email_pelanggan', 'telepon_pelanggan', 'status','is_paid', 'total_harga'];
 
     public function paket()
     {
-        return $this->belongsTo(Paket::class);
+        return $this->belongsTo(related: Paket::class);
     }
 
     public function user()

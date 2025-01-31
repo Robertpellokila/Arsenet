@@ -11,8 +11,6 @@ class PesananController extends Controller
     {
         // Ambil pesanan-pesanan yang terkait dengan pengguna yang login
         $orders = Order::byUserEmail(auth()->user()->email)->get();
-
-
         
         // dd($orders);
 

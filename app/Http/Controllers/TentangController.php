@@ -12,7 +12,7 @@ class TentangController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $galleries = Gallery::latest()->take(6)->get();
+        $galleries = Gallery::all();
 
         return view('tentang.index',[
             'galeries' => $galleries,

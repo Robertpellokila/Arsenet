@@ -61,16 +61,19 @@ class OrderResource extends Resource
                         ->options([
                             'pending' => 'Pending',
                             'completed' => 'Completed',
+                            'active' => 'Active',
                             'canceled' => 'Cancelled',
                         ])
                         ->colors([
-                            'pending' => 'info',
-                            'completed' => 'success',
+                            'pending' => 'warning',
+                            'completed' => 'info',
+                            'active' => 'success',
                             'canceled' => 'danger',
                         ])
                         ->icons([
                             'pending' => 'heroicon-m-arrow-path',
                             'completed' => 'heroicon-m-check-badge',
+                            'active' => 'heroicon-m-check-badge',
                             'canceled' => 'heroicon-m-x-circle',
                         ]),
             
@@ -90,6 +93,7 @@ class OrderResource extends Resource
                 ->options([
                     'pending' => 'Pending',
                     'completed' => 'Completed',
+                    'active' => 'Active',
                     'canceled' => 'Cancelled',                
                 ])
                 ->searchable()

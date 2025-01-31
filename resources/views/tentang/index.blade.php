@@ -8,6 +8,7 @@
             <div class="flex justify-center mt-10 mx-5">
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    
                     @foreach ($galeries as $foto)
                     <div class="grid gap-4">
 
@@ -17,57 +18,6 @@
                         </div>
                     </div>
                     @endforeach
-                    {{-- <div>
-                        <img class="h-auto max-w-full rounded-lg"
-                            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="">
-                    </div>
-                    <div>
-                        <img class="h-auto max-w-full rounded-lg"
-                            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt="">
-                    </div>
-                </div>
-                <div class="grid gap-4">
-                    <div>
-                        <img class="h-auto max-w-full rounded-lg"
-                            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt="">
-                    </div>
-                    <div>
-                        <img class="h-auto max-w-full rounded-lg"
-                            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="">
-                    </div>
-                    <div>
-                        <img class="h-auto max-w-full rounded-lg"
-                            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="">
-                    </div>
-                </div>
-                <div class="grid gap-4">
-                    <div>
-                        <img class="h-auto max-w-full rounded-lg"
-                            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="">
-                    </div>
-                    <div>
-                        <img class="h-auto max-w-full rounded-lg"
-                            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="">
-                    </div>
-                    <div>
-                        <img class="h-auto max-w-full rounded-lg"
-                            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="">
-                    </div>
-                </div>
-                <div class="grid gap-4">
-                    <div>
-                        <img class="h-auto max-w-full rounded-lg"
-                            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="">
-                    </div>
-                    <div>
-                        <img class="h-auto max-w-full rounded-lg"
-                            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt="">
-                    </div>
-                    <div>
-                        <img class="h-auto max-w-full rounded-lg"
-                            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="">
-                    </div>
-                </div> --}}
 
             </div>
         </div>
@@ -79,7 +29,7 @@
     <main class="container mx-auto px-4 py-10 space-y-10">
         <!-- Visi & Misi -->
         <section>
-            <h2 class="text-2xl font-bold text-gray-800 mb-4">Visi & Misi</h2>
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Visi & Misi</h2>
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="bg-white shadow-md rounded-lg p-6">
                     <h3 class="text-xl font-semibold text-blue-600 mb-2">Visi</h3>
@@ -100,7 +50,7 @@
 
         <!-- Nilai Perusahaan -->
         <section>
-            <h2 class="text-2xl font-bold text-gray-800 mb-4">Nilai Perusahaan</h2>
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Nilai Perusahaan</h2>
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="bg-white shadow-md rounded-lg p-6 text-center">
                     <h3 class="text-xl font-semibold text-blue-600 mb-2">Inovasi</h3>
@@ -119,7 +69,7 @@
 
         <!-- Sejarah Singkat -->
         <section>
-            <h2 class="text-2xl font-bold text-gray-800 mb-4">Sejarah Kami</h2>
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Sejarah Kami</h2>
             <p class="text-gray-600 leading-relaxed text-justify">
                 Didirikan pada tahun 2010, JaringanNet telah berkembang dari sebuah perusahaan kecil menjadi salah satu
                 penyedia layanan internet terkemuka di Indonesia. Dengan dedikasi untuk memberikan layanan terbaik, kami
@@ -129,7 +79,7 @@
 
         <!-- Informasi Kontak -->
         <section>
-            <h2 class="text-2xl font-bold text-gray-800 mb-4">Hubungi Kami</h2>
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Hubungi Kami</h2>
             <div class="bg-white shadow-md rounded-lg p-6">
                 <p class="text-gray-600">Butuh informasi lebih lanjut? Silakan hubungi kami melalui:</p>
                 <ul class="list-none mt-4 text-gray-600 space-y-2">
