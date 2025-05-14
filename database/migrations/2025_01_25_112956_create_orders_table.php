@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama_pelanggan');
             $table->string('email_pelanggan');
             $table->string('telepon_pelanggan');
+            $table->string('alamat_pelanggan');
             $table->foreignId('paket_id')->constrained('pakets')->onDelete('cascade'); // Relasi ke tabel paket
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');  // Relasi ke tabel user
             $table->enum('status', ['pending', 'completed','active', 'canceled'])->default('pending'); // Status pemesanan

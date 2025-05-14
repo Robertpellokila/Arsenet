@@ -20,6 +20,7 @@ public function store(Request $request, Paket $paket)
         'nama_pelanggan' => 'required|string|max:255',
         'email_pelanggan' => 'required|email|max:255',
         'telepon_pelanggan' => 'required|string|max:15',
+        'alamat_pelanggan' => 'required|string|max:255',
     ]);
 
     // Validasi: Cek apakah user sudah memesan paket ini
@@ -36,6 +37,7 @@ public function store(Request $request, Paket $paket)
         'nama_pelanggan' => $request->nama_pelanggan,
         'email_pelanggan' => $request->email_pelanggan,
         'telepon_pelanggan' => $request->telepon_pelanggan,
+        'alamat_pelanggan' => $request->alamat_pelanggan,
         'paket_id' => $paket->id,
         'user_id' => auth()->id(),
         'status' => 'pending', // status pemesanan

@@ -15,6 +15,7 @@ class Order extends Model
         'nama_pelanggan',
         'email_pelanggan',
         'telepon_pelanggan',
+        'alamat_pelanggan',
         'status',
         'is_paid',
         'total_harga'

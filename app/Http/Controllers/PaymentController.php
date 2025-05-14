@@ -26,7 +26,7 @@ class PaymentController extends Controller
         // Data transaksi
         $transactionDetails = [
             'transaction_details' => [
-                'order_id' => $order->id,
+               'order_id' => 'ORDER-' . $order->id . '-' . time(),
                 'gross_amount' => (int)$order->total_harga,
             ],
             'customer_details' => [
