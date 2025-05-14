@@ -10,7 +10,15 @@ class Order extends Model
     use HasFactory;
 
     protected $fillable = [
-        'paket_id', 'user_id', 'nama_pelanggan', 'email_pelanggan', 'telepon_pelanggan', 'status','is_paid', 'total_harga'];
+        'paket_id',
+        'user_id',
+        'nama_pelanggan',
+        'email_pelanggan',
+        'telepon_pelanggan',
+        'status',
+        'is_paid',
+        'total_harga'
+    ];
 
     public function paket()
     {
@@ -22,12 +30,12 @@ class Order extends Model
         return $this->belongsTo(User::class);
     }
 
-    
+
 
     public function scopeByUserEmail($query, $email)
-{
-    return $query->whereHas('user', function ($query) use ($email) {
-        $query->where('email', $email);
-    });
-}
+    {
+        return $query->whereHas('user', function ($query) use ($email) {
+            $query->where('email', $email);
+        });
+    }
 }

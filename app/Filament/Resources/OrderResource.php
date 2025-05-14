@@ -41,7 +41,7 @@ class OrderResource extends Resource
                     ->label('Telepon Pelanggan')
                     ->tel()
                     ->required(),
-                BelongsToSelect::make('paket_id')  // pastikan field ini sesuai dengan nama kolom foreign key
+                Select::make('paket_id')  // pastikan field ini sesuai dengan nama kolom foreign key
                     ->label('Paket')
                     ->relationship('paket', 'nama')
                     ->required()

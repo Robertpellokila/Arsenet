@@ -25,7 +25,7 @@
     </div>
 
     @endif
-    <div class="container mx-auto p-6">
+    <div class="container mx-auto p-6 mt-12">
 
         {{-- @dd($orders); --}}
         <h2 class="text-2xl text-center font-semibold text-gray-800 dark:text-white mb-10">
@@ -62,9 +62,9 @@
                             {{ $order->paket->nama }}
                         </th>
                         <td class="px-6 py-4">
-                            <span class="@if ($order->status === 'canceled') text-red-500 rounded-md bg-red-100 p-1
-             @elseif ($order->status === 'completed') text-green-500 rounded-md bg-green-100 p-1  
-             @else text-yellow-500 rounded-md bg-yellow-100 p-1  @endif">
+                            <span class="@if ($order->status === 'canceled') text-white rounded-md bg-red-500 p-1
+             @elseif ($order->status === 'active') text-white rounded-md bg-green-500 p-1 @elseif ($order->status === 'completed') text-white rounded-md bg-blue-500 p-1
+             @else text-white rounded-md bg-yellow-300 p-1  @endif">
                                 {{ $order->status }}
                             </span>
                         </td>

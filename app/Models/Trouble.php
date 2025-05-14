@@ -10,6 +10,21 @@ class Trouble extends Model
     use HasFactory;
 
     protected $fillable = [
-        'alamat', 'deskripsi', 'foto'
+        
+        'user_id', 'status','alamat', 'deskripsi', 'foto'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    
+
+    public function scopeByUserEmail($query, $email)
+    {
+        return $query->whereHas('user', function ($query) use ($email) {
+            $query->where('email', $email);
+        });
+    }
 }

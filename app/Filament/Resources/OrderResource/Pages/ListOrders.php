@@ -4,6 +4,7 @@ namespace App\Filament\Resources\OrderResource\Pages;
 
 use App\Filament\Resources\OrderResource;
 use App\Filament\Resources\OrderResource\Widgets\OrdersPerMonthChart;
+use App\Filament\Resources\OrderResource\Widgets\RevenueWidget;
 use App\Filament\Resources\OrderResource\Widgets\ReviewOrder;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
@@ -28,7 +29,8 @@ class ListOrders extends ListRecords
     protected function getHeaderWidgets(): array
     {
         return [
-          ReviewOrder::class  
+          ReviewOrder::class,
+          RevenueWidget::class,  
         ];
     }
     

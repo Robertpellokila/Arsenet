@@ -22,6 +22,8 @@ class PertanyaanResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-question-mark-circle';
 
+    protected static ?string $navigationLabel = 'Pertanyaan';
+
     public static function form(Form $form): Form
     {
         return $form

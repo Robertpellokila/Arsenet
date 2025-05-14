@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    <div class="container mx-auto my-10 p-6 bg-white border rounded-lg shadow-md">
+    <div class="container mx-auto my-10 p-6 bg-white border rounded-lg shadow-md mt-12">
         <h2 class="text-3xl font-extrabold text-center text-blue-600 mb-8">Tagihan Pembayaran</h2>
 
         <div class="grid mx-auto max-w-xl grid-cols-1 gap-6 border shadow-md">

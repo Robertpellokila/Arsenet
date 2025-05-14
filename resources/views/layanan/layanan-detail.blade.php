@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="container mx-auto p-6">
+    <div class="container mx-auto p-6 mt-12">
 
         <!-- Tombol Kembali dengan posisi sticky di kiri atas -->
         <a href="{{ route('layanan') }}" class="fixed top-16 left-4 flex items-center justify-center w-12 h-12 bg-blue-600 text-white rounded-3xl shadow-md hover:bg-blue-500 z-10">

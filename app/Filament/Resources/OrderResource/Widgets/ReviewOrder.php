@@ -13,7 +13,7 @@ class ReviewOrder extends BaseWidget
         return [
             Stat::make('Total Orders', Order::count()),
             Stat::make('Total Pending', Order::where('status', 'pending' )->count()),
-            Stat::make('Total Completed', Order::where('status', 'completed')->count()),
+            Stat::make('Total Active', Order::where('status', 'active')->count()),
         ];
     }
 }

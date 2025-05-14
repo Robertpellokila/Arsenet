@@ -18,7 +18,7 @@
     </div>
     @endif
     <!-- Kontak Kami Section -->
-    <div class="container mx-auto p-6">
+    <div class="container mx-auto p-6 mt-12">
         <h2 class="text-3xl font-semibold text-center text-gray-800 mb-8">Kontak Kami</h2>
 
         <!-- Informasi Kontak -->

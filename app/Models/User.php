@@ -28,12 +28,15 @@ class User extends Authenticatable implements MustVerifyEmail, FilamentUser
 
     const ROLE_PETUGAS = 'PETUGAS';
 
+    const ROLE_SALES = 'SALES';
+
     const ROLE_DEFAULT = self::ROLE_USER;
 
     const ROLES = [
         self::ROLE_USER => 'User',
         self::ROLE_ADMIN => 'Admin',
         self::ROLE_PETUGAS => 'Petugas',
+        self::ROLE_SALES => 'Sales',
     ];
 
     public function canAccessPanel(Panel $panel): bool
@@ -49,6 +52,11 @@ class User extends Authenticatable implements MustVerifyEmail, FilamentUser
     public function isPetugas()
     {
         return $this->role === self::ROLE_PETUGAS;
+    }
+
+    public function isSales()
+    {
+        return $this->role === self::ROLE_SALES;
     }
 
     /**

@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('troubles', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('alamat');
             $table->string('deskripsi');
+            $table->enum('status', ['pending', 'completed', 'canceled'])->default('pending'); // Status pemesanan
             $table->string('foto')->nullable();
             $table->timestamps();
         });

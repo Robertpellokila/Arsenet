@@ -1,6 +1,6 @@
 <x-app-layout>
     {{-- @dd($order); --}}
-    <div class="container mx-auto my-10 p-6 bg-white border rounded-lg shadow-lg max-w-3xl">
+    <div class="container mx-auto my-10 p-6 bg-white border rounded-lg shadow-lg max-w-3xl mt-12">
         <div class="text-center mb-8">
             <h2 class="text-3xl font-semibold text-gray-900">Nota Pembayaran</h2>
             <p class="text-lg text-gray-600">Pesanan: {{ $order->paket->nama }}</p>

@@ -47,10 +47,14 @@ class FiturResource extends Resource
         return $table
             ->columns([
             TextColumn::make('nama')
-                ->label('Nama'),
+                ->label('Nama')
+                ->sortable()
+                ->searchable(),
             
             TextColumn::make('deskripsi')
-                ->label('Deskripsi'),
+                ->label('Deskripsi')
+                ->sortable()
+                ->searchable(),
             
             ImageColumn::make('gambar')
                 ->label('Gambar')

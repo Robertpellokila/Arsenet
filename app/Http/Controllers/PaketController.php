@@ -13,7 +13,7 @@ class PaketController extends Controller
      */
     public function index()
     {
-        $pakets = Paket::all();
+        $pakets = Paket::latest()->take(5)->get();
 
         return view('layanan.index', compact('pakets'));
     }

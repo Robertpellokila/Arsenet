@@ -3,6 +3,7 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Resources\OrderResource\Widgets\OrdersPerMonthChart;
+use App\Filament\Resources\OrderResource\Widgets\RevenueWidget;
 use App\Filament\Resources\OrderResource\Widgets\ReviewOrder;
 use App\Filament\Resources\PaketResource\Widgets\PaketTerakhirWidget;
 use App\Filament\Resources\UserResource\Widgets\UserStatsOverview;
@@ -42,6 +43,7 @@ class AdminPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
+                RevenueWidget::class,
                 UserStatsOverview::class,
                 ReviewOrder::class,
                 OrdersPerMonthChart::class,

@@ -34,12 +34,12 @@ class UserResource extends Resource
                 TextInput::make('email')
                     ->label('Email')
                     ->required(),
-            //     TextInput::make('password')
-            //         ->label('Password')
-            //         ->password()
-            //         ->rules(['required', Password::defaults()])
-            // ->dehydrateStateUsing(fn ($state) => Hash::make($state))
-            // ->label('Password'),
+                TextInput::make('password')
+                    ->label('Password')
+                    ->password()
+                    ->rules(['required', Password::defaults()])
+                    ->dehydrateStateUsing(fn($state) => Hash::make($state))
+                    ->label('Password'),
                 Select::make('role')
                     ->label('Role')
                     ->options(User::ROLES)
@@ -61,8 +61,7 @@ class UserResource extends Resource
                     ->label('Role')
                     ->searchable(),
                 TextColumn::make('email_verified_at')
-                    ->label('Verified At')
-                    ,
+                    ->label('Verified At'),
             ])
             ->filters([
                 //

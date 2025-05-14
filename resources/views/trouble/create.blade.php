@@ -23,7 +23,7 @@
         </button>
     </div>
     @endif
-    <div class="container mt-5">
+    <div class="container mt-16">
         <div class="card">
             <div class="card-body">
 
@@ -59,21 +59,66 @@
                     <button type="submit" class="btn btn-primary">Kirim Laporan</button>
                 </form> --}}
 
-                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Laporan Masalah Jaringan</h3>
-                <form id="contact-form" action="{{ route('trouble.store') }}" method="POST">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Laporan Masalah Jaringan</h3>
+                <form id="trouble-form" action="{{ route('trouble.store') }}" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
 
                     <div class="mb-4">
                         <label for="alamat" class="block text-gray-700">Alamat</label>
-                        <input type="alamat" id="alamat" name="alamat" class="w-full p-3 border border-gray-300 rounded-lg"
-                            required />
+                        <input type="text" id="alamat" name="alamat"
+                            class="w-full p-3 border border-gray-300 rounded-lg" required />
                     </div>
                     <div class="mb-4">
-                        <label for="deskripsi" class="block text-gray-700">Deskripsi Masalahnpm r</label>
-                        <div id="editor-container" class="border border-gray-300 rounded-lg" style="height: 200px;">
-                        </div>
-                        <input type="hidden" name="deskripsi" id="deskripsi" />
+                        <label for="deskripsi"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Deskripsi
+                            Masalah</label>
+                        <textarea id="deskripsi" name="deskripsi" rows="4"
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Leave a comment..."></textarea>
                     </div>
+
+                    <div class="col-span-full mb-2">
+                        <label for="cover-photo" class="block text-sm/6 font-medium text-gray-900">Foto Masalah</label>
+                        <div
+                            class="mt-2 flex flex-col items-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+                            <!-- Preview Gambar -->
+                            <img id="preview" class="mb-4  rounded-lg shadow hidden" />
+
+                            <!-- SVG Icon (Akan disembunyikan ketika gambar muncul) -->
+                            <svg id="icon-upload" class="size-12 text-gray-300 transition-opacity duration-300"
+                                viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M1.5 6a2.25 2.25 0 0 1 2.25-2.25h16.5A2.25 2.25 0 0 1 22.5 6v12a2.25 2.25 0 0 1-2.25 2.25H3.75A2.25 2.25 0 0 1 1.5 18V6ZM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0 0 21 18v-1.94l-2.69-2.689a1.5 1.5 0 0 0-2.12 0l-.88.879.97.97a.75.75 0 1 1-1.06 1.06l-5.16-5.159a1.5 1.5 0 0 0-2.12 0L3 16.061Zm10.125-7.81a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+
+                            <!-- Label Upload -->
+                            <div class="mt-4 flex text-sm/6 text-gray-600">
+                                <label for="foto"
+                                    class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
+                                    <span>Upload a file</span>
+                                    <input id="foto" name="foto" type="file" class="sr-only"
+                                        accept="image/jpeg, image/png" capture="environment">
+                                </label>
+                                <p class="pl-1">or drag and drop</p>
+                            </div>
+                            <p class="text-xs/5 text-gray-600">PNG, JPG up to 5MB</p>
+                        </div>
+                    </div>
+
+                    {{-- <div class="mb-4">
+                        <label for="foto" class="block text-gray-700 font-semibold">Upload Foto</label>
+
+                        <div class="relative border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
+                            <label for="foto" class="cursor-pointer text-indigo-600 font-semibold hover:underline">
+                                Upload Foto
+                            </label>
+                            <input type="file" id="foto" name="foto" accept="image/jpeg, image/png"
+                                class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" />
+                        </div>
+                    </div> --}}
+
                     <button type="submit"
                         class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition duration-300">Kirim
                         Pesan</button>
@@ -83,29 +128,22 @@
     </div>
     </div>
 
-    <!-- Quill.js Script -->
-    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
     <script>
-        // Inisialisasi Quill.js
-        var quill = new Quill('#editor-container', {
-            theme: 'snow',
-            placeholder: 'Tulis pesan Anda di sini...',
-            modules: {
-                toolbar: [
-                    [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
-                    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-                    ['bold', 'italic', 'underline'],
-                    [{ 'align': [] }],
-                    ['link']
-                ]
+        document.getElementById('foto').addEventListener('change', function(event) {
+            let file = event.target.files[0];
+            let preview = document.getElementById('preview');
+            let iconUpload = document.getElementById('icon-upload');
+    
+            if (file) {
+                let reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.classList.remove('hidden');
+                    iconUpload.classList.add('hidden'); // Sembunyikan ikon saat gambar muncul
+                };
+                reader.readAsDataURL(file);
             }
         });
-
-        // Menyimpan pesan dari editor Quill.js ke input hidden sebelum mengirimkan form
-        document.getElementById('contact-form').onsubmit = function() {
-            var message = quill.root.innerHTML;
-            document.getElementById('message').value = message;  // Menyimpan isi pesan
-        };
     </script>
 
 </x-app-layout>

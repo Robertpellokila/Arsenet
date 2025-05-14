@@ -9,7 +9,11 @@ class TroubleController extends Controller
 {
     public function index()
     {
-        return view('trouble.index');
+        $troubles = Trouble::byUserEmail(auth()->user()->email)->get();
+
+        return view('trouble.index',[
+            'troubles' => $troubles
+        ]);
     }
 
     public function create()
@@ -41,22 +45,30 @@ class TroubleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'address' => 'required|string|max:255',
-            'description' => 'required|string',
-            'photo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'alamat' => 'required|string|max:255',
+            'deskripsi' => 'required|string',
+            'foto' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
 
         $photoPath = null;
-        if ($request->hasFile('photo')) {
-            $photoPath = $request->file('photo')->store('reports', 'public');
+        if ($request->hasFile('foto')) {
+            $photoPath = $request->file('foto')->store('troubles', 'public');
         }
 
         Trouble::create([
-            'address' => $request->address,
-            'description' => $request->description,
-            'photo' => $photoPath,
+            'user_id' => auth()->id(),
+            'alamat' => $request->alamat,
+            'deskripsi' => $request->deskripsi,
+            'foto' => $photoPath,
         ]);
 
-        return redirect()->route('trouble.index')->with('success', 'Laporan berhasil dikirim.');
+        return redirect()->route('trouble')->with('success', 'Laporan berhasil dikirim. Dan akan segera kami proses.');
+    }
+
+    public function show(Trouble $trouble)
+    {
+        $trouble->load('user');
+
+        return view('trouble.show', compact('trouble'));
     }
 }

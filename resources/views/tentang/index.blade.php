@@ -1,6 +1,6 @@
 <x-app-layout>
     <!-- Header Section -->
-    <header class="bg-blue-500 text-white py-20 rounded-md">
+    <header class="bg-blue-500 text-white py-20 rounded-md ">
         <div class=" container mx-auto text-center">
             <h1 class="text-4xl font-bold mb-4">Tentang Kami</h1>
             <p class="text-lg">Mengenal lebih dekat perusahaan pemasangan jaringan internet terbaik untuk Anda.</p>
@@ -26,7 +26,7 @@
     </header>
 
     <!-- Content Section -->
-    <main class="container mx-auto px-4 py-10 space-y-10">
+    <main class="container mx-auto px-4 py-10 space-y-10 mt-12">
         <!-- Visi & Misi -->
         <section>
             <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Visi & Misi</h2>

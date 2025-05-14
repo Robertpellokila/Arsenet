@@ -25,12 +25,13 @@ Route::get('/', HomeController::class)->name('home');
 
 Route::get('/tentang', TentangController::class)->name('tentang');
 
-Route::get('/layanan', [PaketController::class, 'index'])->name('layanan');
+Route::middleware(['auth', 'verified'])->get('/layanan', [PaketController::class, 'index'])->name('layanan');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/trouble', [TroubleController::class, 'index'])->name('trouble');
     Route::get('/trouble/create', [TroubleController::class, 'create'])->name('trouble.create');
     Route::post('/trouble', [TroubleController::class, 'store'])->name('trouble.store');
+    Route::get('/trouble/{trouble}', [TroubleController::class, 'show'])->name('trouble.show');
 });
 
 
@@ -45,9 +46,9 @@ Route::middleware('verified')->group(function () {
 });
 
 // routes/web.php
-Route::middleware('auth')->get('/pesanan-saya', [PesananController::class, 'index'])->name('pesanan-saya');
+Route::middleware(['auth', 'verified'])->get('/pesanan-saya', [PesananController::class, 'index'])->name('pesanan-saya');
 
-Route::middleware('auth')->get('/pesanan/{order}', [PesananController::class, 'show'])->name('pesanan.show');
+Route::middleware(['auth', 'verified'])->get('/pesanan/{order}', [PesananController::class, 'show'])->name('pesanan.show');
 
 Route::patch('/pesanan/{id}/cancel', [PesananController::class, 'cancel'])->name('pesanan.cancel');
 
