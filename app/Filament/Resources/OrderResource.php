@@ -7,6 +7,7 @@ use App\Filament\Resources\OrderResource\RelationManagers;
 use App\Models\Order;
 use Filament\Forms;
 use Filament\Forms\Components\BelongsToSelect;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -34,6 +35,8 @@ class OrderResource extends Resource
                 TextInput::make('nama_pelanggan')
                     ->label('Nama Pelanggan')
                     ->required(),
+                Hidden::make('user_id')
+                    ->default(auth()->id()), // Mengambil ID user yang sedang login
                 TextInput::make('email_pelanggan')
                     ->label('Email Pelanggan')
                     ->email()

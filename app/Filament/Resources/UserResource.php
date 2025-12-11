@@ -41,7 +41,7 @@ class UserResource extends Resource
                     ->dehydrateStateUsing(fn($state) => Hash::make($state))
                     ->label('Password'),
                 Select::make('role')
-                    ->label('Role')
+                    ->label('Role') 
                     ->options(User::ROLES)
                     ->required(),
             ]);
