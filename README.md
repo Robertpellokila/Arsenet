@@ -72,5 +72,5 @@ Admin dapat mengatur semua konten pada website utama:
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/username/arsenet-sipj-wifi.git
-cd arsenet-sipj-wifi
+git clone https://github.com/Robertpellokila/Arsenet.git
+cd Arsenet
