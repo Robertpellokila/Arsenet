@@ -78,20 +78,28 @@ Admin dapat mengatur semua konten pada website utama:
 -npm install
 -cp .env.example .env
 -php artisan key:generate
+```
+```bash
 
 ### 2. Set Database .env
 -DB_DATABASE=arsenet_db
 -DB_USERNAME=root
 -DB_PASSWORD=
+```
+```bash
 
 ### 3. Migrasi Database
 -php artisan migrate --seed
-
+```
+```bash
 ### 4. Set Midtrans Credentials
 -MIDTRANS_SERVER_KEY=your_server_key
 -MIDTRANS_CLIENT_KEY=your_client_key
 -MIDTRANS_IS_PRODUCTION=false
-
+```
+```bash
 ### 5. Run Development Server
 -php artisan serve
 -npm run dev
+```
+```bash
