@@ -17,6 +17,7 @@
         "midtrans/midtrans-php": "^2.6"
     },
     "require-dev": {
+        "beyondcode/laravel-er-diagram-generator": "^5.0",
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.18",

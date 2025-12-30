@@ -3,7 +3,7 @@
 
     <div class="w-full text-center py-32">
         <h1 class="text-2xl md:text-3xl font-bold text-center lg:text-5xl text-gray-700 mt-4">
-            Selamat Datang di <span class="text-blue-500">ARSENET</span>
+            Welcome to <span class="text-blue-500">ARSENET</span>
         </h1>
         <p class="text-gray-500 text-lg mt-1">Solusi Internet Profesional untuk Kebutuhan Anda</p>
         <a class="px-3 py-2 text-lg text-white bg-gray-800 hover:bg-transparent hover:text-blue-500 hover:border rounded-lg mt-5 inline-block"
