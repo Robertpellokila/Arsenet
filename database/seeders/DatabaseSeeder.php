@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Promo;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,6 +20,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Servis::factory(5)->create();
         \App\Models\Gallery::factory(5)->create();
         \App\Models\Paket::factory(5)->create();
+        Promo::factory(5)->create();
         
 
         // \App\Models\User::factory()->create([

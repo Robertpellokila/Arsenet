@@ -31,6 +31,10 @@ class Order extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function Promo()
+    {
+        return $this->belongsTo(Promo::class);
+    }
 
 
     public function scopeByUserEmail($query, $email)

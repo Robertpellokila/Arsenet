@@ -16,6 +16,21 @@ return new class extends Migration
             $table->string('judul');
             $table->string('kode_promo')->unique();
             $table->text('deskripsi')->nullable();
+
+            $table->enum('tipe_diskon', ['persen', 'nominal']);
+            $table->integer('nilai_diskon');
+
+            $table->integer('maks_diskon')->nullable(); // untuk persen
+            $table->integer('min_transaksi')->nullable();
+
+            $table->dateTime('mulai');
+            $table->dateTime('berakhir');
+
+            $table->integer('kuota')->nullable(); // berapa kali bisa dipakai
+            $table->integer('digunakan')->default(0);
+
+            $table->boolean('is_active')->default(true);
+
             $table->timestamps();
         });
     }
