@@ -16,7 +16,7 @@ class PaymentController extends Controller
             return redirect()->back()->with('error', 'Invalid order details. Please try again.');
         }
 
-        // Proceed with payment gateway setup
+        // Proceed with payment gateway setup, 
         $paymentGateway = new \Midtrans\Snap();
 
         Config::$serverKey = env('MIDTRANS_SERVER_KEY');
