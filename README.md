@@ -72,33 +72,33 @@ Admin dapat mengatur semua konten pada website utama:
 
 ### 1. Clone Repository
 ```bash
--git clone https://github.com/Robertpellokila/Arsenet.git
--cd Arsenet
--composer install
--npm install
--cp .env.example .env
--php artisan key:generate
+git clone https://github.com/Robertpellokila/Arsenet.git
+cd Arsenet
+composer install
+npm install
+cp .env.example .env
+php artisan key:generate
 ```
 ```bash
 
 
--DB_DATABASE=arsenet_db
--DB_USERNAME=root
--DB_PASSWORD=
+DB_DATABASE=your_database
+DB_USERNAME=root
+DB_PASSWORD=
 ```
 ```bash
 
 
--php artisan migrate --seed
+php artisan migrate --seed
 ```
 ```bash
 
--MIDTRANS_SERVER_KEY=your_server_key
--MIDTRANS_CLIENT_KEY=your_client_key
--MIDTRANS_IS_PRODUCTION=false
+MIDTRANS_SERVER_KEY=your_server_key
+MIDTRANS_CLIENT_KEY=your_client_key
+MIDTRANS_IS_PRODUCTION=false
 ```
 ```bash
 
--php artisan serve
--npm run dev
+php artisan serve
+npm run dev
 ```
